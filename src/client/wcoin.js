@@ -3,11 +3,11 @@ import { default as Web3} from 'web3';
 import { default as contract } from 'truffle-contract'
 
 // Import our contract artifacts and turn them into usable abstractions.
-import wiwicoin_artifacts from './contracts/WiwiCoin.json'
+import wiwicoin_artifacts from './contracts/MetaCoin.json'
 
 // WiwiCoin is our usable abstraction, which we'll use through the code below.
 var WiwiCoin = contract(wiwicoin_artifacts);
-
+window.testCoin = WiwiCoin;
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
 // For application bootstrapping, check out window.addEventListener below.
@@ -16,9 +16,18 @@ var account;
 
 window.HomeApp = {
   atest: function(){
-    WiwiCoin.deployed().then(function(instance) {
-      console.log(instance);
-    });
+    //alert('atest');
+    // console.log('-----------------------');
+    // console.log(WiwiCoin);
+    // console.log(WiwiCoin.deployed());
+    // console.log('-----------------------');
+
+    // WiwiCoin.setProvider(window.web3.currentProvider);
+    //
+    // WiwiCoin.deployed().then(function(instance) {
+    //   console.log(' instance: -----------------------');
+    //   console.log(instance);
+    // });
   },
   start: function() {
     var self = this;
@@ -51,6 +60,7 @@ window.HomeApp = {
   },
 
   refreshBalance: function() {
+    alert('refresh balance');
     var self = this;
 
     var meta;
@@ -100,6 +110,8 @@ window.addEventListener('load', function() {
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
   }
 
-  HomeApp.start();
+  window.web3.eth.defaultAccount=web3.eth.accounts[0];
+
   HomeApp.atest();
+  HomeApp.start();
 });

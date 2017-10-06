@@ -2,13 +2,13 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const APP_DIR = path.resolve(__dirname, 'src/client');
-const BUILD_DIR = path.resolve(__dirname, 'public');
+const APP_DIR = path.resolve(__dirname, './src/client');
+const BUILD_DIR = path.resolve(__dirname, './public');
 
 var config = {
     entry: {
-        home: [APP_DIR + '/HomeContainer.js'],
-        mcoin: [APP_DIR + '/wcoin.js'],
+        //home: [APP_DIR + '/HomeContainer.js'],
+        wcoin: [APP_DIR + '/wcoin.js'],
     },
     output: {
         path: BUILD_DIR,
@@ -16,13 +16,24 @@ var config = {
     },
     module: {
         rules: [
+          /*
           {
               test: /\.js$/,
               loader: "babel-loader",
               options: {
                 presets: [["es2015", {modules: false}], "react"]
               }
+          },*/
+
+          {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+            include: [
+                  path.resolve(__dirname, './src/client')
+                ]
           },
+          /*
           {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
@@ -32,12 +43,12 @@ var config = {
                 { loader: "sass-loader", options: {sourceMap: true}}
               ]
             })
-          },
+          },*/
         ]
-    },
+    },/*
     plugins: [
       new ExtractTextPlugin("css/site.css"),
-    ]
+    ]*/
 };
 
 module.exports = config;

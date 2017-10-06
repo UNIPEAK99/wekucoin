@@ -6,5 +6,6 @@ How to run in localhost
 4. git clone https://github.com/UNIPEAK99/wiwicoin.git
 5. run testrpc
 6. in another terminal, cd wiwicoin/blockchain, run: truffle migrate
-7. in another teminal, cd wiwicoin, run: npm run watch
-8. open browser: localhost:5000
+7. cd .., into wiwicoin folder, run: npm install
+8. run: npm run watch
+9 open browser: localhost:5000

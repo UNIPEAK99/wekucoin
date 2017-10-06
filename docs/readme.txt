@@ -1,38 +1,10 @@
-EthereumJS TestRPC v4.1.3 (ganache-core: 1.1.3)
+How to run in localhost
 
-Available Accounts
-==================
-(0) 0x42466c0e94e3be1630198cb47938dede7ef5444c
-(1) 0xfce9282436143197daa0404234dfbb05e7e22173
-(2) 0xc1628dd7314fa05c39ed02645882c93356ca185b
-(3) 0xcf97cd47e531dd2c36086cb87c253d3dbc56d7b0
-(4) 0x905922ecead2e341a8a0a2bc6bfbc61938682f15
-(5) 0x0025aa7d769675be664fce74787721b47388bb55
-(6) 0x10450d0ce47c0d9b6aa3bd1edb51ff9f46c0f9e8
-(7) 0x2e4c9d0c688123446bff772b125c619496baf5ab
-(8) 0xe67a2d856952743b75a320efbf5acb3cabe4c4d2
-(9) 0xf35d1e6df24cae502728471aefdcbf5c9363d65d
-
-Private Keys
-==================
-(0) 296434c54549129544e6012be69c8883c8c4cddc4452a321d13e442418c9d213
-(1) 2f0f13899aef8d733a452fe799752493f41312f182209ddb46178b587bf367bc
-(2) 3e97bb6b69cb2ba4aa5d37b04b5ab1fa01b17b1101b9ec526da8b25d4c7be465
-(3) c3d497a0dfa300d6dc85858d6995262c34b45821446016b8329a46115166050b
-(4) b760e9574b8f8998c6c55aedf6260b90cbc0d3fb1f8c64a5e1aafedc90cd125e
-(5) 2926adb515d46a379d8318d9999f43a46e708f3a3c1bbb4b9db336e65a76c355
-(6) 83e13252d434c9e74741ff3e12cd49ca85fcd4a21127de99d4fd4ddd51f53a81
-(7) b6470c8957f1f375511f891c0f0202c3c64859bae3a1fb70972b5b60013e2811
-(8) 7c65f20962d0f0dc1b032fe73d6cf03b022028b143854d83a00b673391d3714e
-(9) 59fb4a9b22bb9039e8413de54ece336f22942aa43890ecdb0210cef9943fe353
-
-HD Wallet
-==================
-Mnemonic:      sword vacant aisle action wreck final exotic general balcony idle foil situate
-Base HD Path:  m/44'/60'/0'/0/{account_index}
-
-Listening on localhost:8545
-eth_getBlockByNumber
-eth_getBlockByNumber
-eth_getBlockByNumber
-eth_getBlockByNumber
+1. Install nodejs latest version.
+2. sudo npm install testrpc -g
+3. sudo npm install truffle -g
+4. git clone https://github.com/UNIPEAK99/wiwicoin.git
+5. run testrpc
+6. in another terminal, cd wiwicoin/blockchain, run: truffle migrate
+7. in another teminal, cd wiwicoin, run: npm run watch
+8. open browser: localhost:5000

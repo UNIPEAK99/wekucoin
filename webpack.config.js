@@ -9,6 +9,7 @@ var config = {
     entry: {
         //home: [APP_DIR + '/HomeContainer.js'],
         wcoin: [APP_DIR + '/wcoin.js'],
+        viewAccount: [APP_DIR + '/viewAccount.js'],
     },
     output: {
         path: BUILD_DIR,

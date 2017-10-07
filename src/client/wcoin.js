@@ -16,18 +16,7 @@ var account;
 
 window.HomeApp = {
   atest: function(){
-    //alert('atest');
-    // console.log('-----------------------');
-    // console.log(WiwiCoin);
-    // console.log(WiwiCoin.deployed());
-    // console.log('-----------------------');
 
-    // WiwiCoin.setProvider(window.web3.currentProvider);
-    //
-    // WiwiCoin.deployed().then(function(instance) {
-    //   console.log(' instance: -----------------------');
-    //   console.log(instance);
-    // });
   },
   start: function() {
     var self = this;
@@ -49,9 +38,16 @@ window.HomeApp = {
 
       accounts = accs;
       account = accounts[0];
-
+      $('#current-account').html(account);
+      self.showAccounts(accounts);
       self.refreshBalance();
     });
+  },
+
+  showAccounts: function(accountList){
+    for (let a of accountList) {
+      $('#account-list').append(`<li><span>${a}</span>&nbsp;<a href='/viewAccount?account=${a}'>View</a></li>`);
+    }
   },
 
   setStatus: function(message) {
@@ -60,7 +56,7 @@ window.HomeApp = {
   },
 
   refreshBalance: function() {
-    alert('refresh balance');
+    //alert('refresh balance');
     var self = this;
 
     var meta;
@@ -112,6 +108,6 @@ window.addEventListener('load', function() {
 
   window.web3.eth.defaultAccount=web3.eth.accounts[0];
 
-  HomeApp.atest();
+  //HomeApp.atest();
   HomeApp.start();
 });

@@ -2,6 +2,7 @@ const passport = require('./auth');
 const Router = require('koa-router');
 const HomeController = require('./controllers/HomeController');
 const AccountController = require('./controllers/AccountController');
+const ViewAccountController = require('./controllers/ViewAccountController');
 const TestController = require('./controllers/TestController');
 
 const auth = passport.authenticate('local', {
@@ -37,7 +38,7 @@ publicRouter
         successRedirect: '/app',
         failureRedirect: '/'
     }))
-
+    .get('/viewAccount', ViewAccountController.index)
     .get('/test', TestController.index);
 
 // Secured routes
